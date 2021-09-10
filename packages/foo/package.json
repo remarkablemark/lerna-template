@@ -7,6 +7,9 @@
   "scripts": {
     "test": "echo foo"
   },
+  "devDependencies": {
+    "jest": "^27.1.1"
+  },
   "files": [
     "lib"
   ],
