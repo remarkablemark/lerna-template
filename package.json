@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
+    "clean": "lerna run clean",
     "postinstall": "husky install",
     "test": "lerna run test"
   },

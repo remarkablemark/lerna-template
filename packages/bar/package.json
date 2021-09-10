@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf lib",
     "test": "jest"
   },
   "devDependencies": {
