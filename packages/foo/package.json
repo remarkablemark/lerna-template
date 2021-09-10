@@ -5,6 +5,7 @@
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "devDependencies": {

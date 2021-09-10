@@ -1,4 +1,4 @@
-const bar = require('..');
+import bar from '../src';
 
 describe('bar', () => {
   it('returns "bar"', () => {

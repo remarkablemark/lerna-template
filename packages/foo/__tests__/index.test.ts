@@ -1,4 +1,4 @@
-const foo = require('..');
+import foo from '../src';
 
 describe('foo', () => {
   it('returns "foo"', () => {
