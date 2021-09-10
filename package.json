@@ -9,7 +9,8 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "husky": "^7.0.2",
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "ts-node": "^10.2.1"
   },
   "workspaces": [
     "packages/*"
