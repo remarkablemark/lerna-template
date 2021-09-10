@@ -1,5 +1,7 @@
 const bar = require('..');
 
 describe('bar', () => {
-  it('needs tests');
+  it('returns "bar"', () => {
+    expect(bar()).toBe('bar');
+  });
 });

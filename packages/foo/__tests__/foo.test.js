@@ -1,5 +1,7 @@
 const foo = require('..');
 
 describe('foo', () => {
-  it('needs tests');
+  it('returns "foo"', () => {
+    expect(foo()).toBe('foo');
+  });
 });

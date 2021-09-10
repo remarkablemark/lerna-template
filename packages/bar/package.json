@@ -5,7 +5,7 @@
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/bar.js",
   "scripts": {
-    "test": "echo bar"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^27.1.1"
