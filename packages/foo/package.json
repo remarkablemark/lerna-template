@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha",
   "description": "foo",
   "author": "Mark <mark@remarkablemark.org>",
-  "main": "lib/foo.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest"
   },

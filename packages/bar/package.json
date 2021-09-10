@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha",
   "description": "bar",
   "author": "Mark <mark@remarkablemark.org>",
-  "main": "lib/bar.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest"
   },
