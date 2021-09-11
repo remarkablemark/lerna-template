@@ -1,7 +1,7 @@
 {
-  "name": "foo",
+  "name": "example-a",
   "version": "1.0.0-alpha",
-  "description": "foo",
+  "description": "bar",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^4.0.0",
