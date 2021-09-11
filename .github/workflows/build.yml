@@ -29,8 +29,11 @@ jobs:
       - name: Lint commit message
         run: yarn commitlint --from=HEAD~1
 
-      - name: Run build
-        run: yarn build
+      - name: Run lint
+        run: yarn lint
 
       - name: Run test
         run: yarn test
+
+      - name: Run build
+        run: yarn build
