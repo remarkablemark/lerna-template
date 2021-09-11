@@ -6,7 +6,7 @@
     "clean": "lerna run clean",
     "lint": "lerna run lint",
     "postinstall": "husky install",
-    "test": "lerna run test"
+    "test": "lerna run test -- --colors"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
