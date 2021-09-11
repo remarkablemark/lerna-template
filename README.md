@@ -1,5 +1,7 @@
 # Lerna Template
 
+[![build](https://github.com/remarkablemark/lerna-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/lerna-template/actions/workflows/build.yml)
+
 [Lerna](https://github.com/lerna/lerna) template.
 
 ## Prerequisites
