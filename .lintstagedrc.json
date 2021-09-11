@@ -1,4 +1,4 @@
 {
-  "*.js": "yarn lint --fix",
+  "*.ts": "eslint --config .eslintrc.root.json --fix",
   "*.{html,json,md,yml}": "prettier --write"
 }
