@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib",
+    "lint": "eslint .",
     "test": "jest"
   },
   "devDependencies": {
