@@ -1,4 +1,4 @@
-import b from '../src';
+import b from '.';
 
 describe('b', () => {
   it('returns "b"', () => {
