@@ -10,6 +10,7 @@ module.exports = {
       [
         'all',
         'deps',
+        'deps-dev',
         'packages',
         'release',
         'root',
