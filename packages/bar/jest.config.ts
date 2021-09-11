@@ -1,1 +1,1 @@
-export { default } from '../../jest.config';
+export { default } from '../../jest.root';
