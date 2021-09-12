@@ -2,7 +2,7 @@ name: publish
 on:
   workflow_dispatch:
     inputs:
-      dry:
+      dry-run:
         description: 'Dry run? (y/N)'
         required: true
         default: 'N'
@@ -10,7 +10,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -55,11 +54,24 @@ jobs:
         run: yarn test
 
       - name: Publish (dry run)
-        if: contains(github.event.inputs.dry, 'y')
+        if: |
+          github.ref == 'refs/heads/master'
+          && contains(github.event.inputs.dry-run, 'y')
         run: yarn lerna version --no-git-tag-version --no-push --yes --loglevel=verbose
 
+      - name: Publish canary
+        if: |
+          github.ref != 'refs/heads/master'
+          && contains(github.event.inputs.dry-run, 'N')
+        run: yarn lerna publish --canary
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish
-        if: contains(github.event.inputs.dry, 'N')
+        if: |
+          github.ref == 'refs/heads/master'
+          && contains(github.event.inputs.dry-run, 'N')
         run: yarn lerna publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
