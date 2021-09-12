@@ -7,7 +7,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf lib",
+    "clean": "rm -rf coverage lib",
     "lint": "eslint .",
     "test": "jest"
   },
