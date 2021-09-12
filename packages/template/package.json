@@ -2,7 +2,7 @@
   "private": true,
   "name": "template",
   "version": "1.0.0-alpha",
-  "description": "template",
+  "description": "placeholder",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",
   "scripts": {

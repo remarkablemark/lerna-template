@@ -1,7 +1,7 @@
-import template from '.';
+import placeholder from '.';
 
-describe('template', () => {
-  it('returns "template"', () => {
-    expect(template()).toBe('template');
+describe('placeholder', () => {
+  it('returns "placeholder"', () => {
+    expect(placeholder()).toBe('placeholder');
   });
 });

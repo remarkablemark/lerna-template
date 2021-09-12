@@ -1,3 +1,3 @@
-export default function template(): string {
-  return 'template';
+export default function placeholder(): string {
+  return 'placeholder';
 }

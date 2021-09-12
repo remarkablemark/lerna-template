@@ -3,5 +3,5 @@
 ## Usage
 
 ```js
-const template = require('template');
+const placeholder = require('placeholder');
 ```
