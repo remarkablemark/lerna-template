@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "test": "jest"
   },
+  "dependencies": {
+    "example-a": "1.0.0-alpha"
+  },
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@typescript-eslint/parser": "^4.31.0",
