@@ -30,11 +30,19 @@ In the root directory, you can run:
 
 ### `yarn build`
 
-Builds all the packages.
+Builds all packages.
+
+### `yarn clean`
+
+Deletes build artifacts from all packages.
+
+### `yarn lint`
+
+Lints all packages.
 
 ### `yarn test`
 
-Runs the tests for all the packages.
+Runs tests for all packages.
 
 ## License
 
