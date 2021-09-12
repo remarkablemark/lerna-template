@@ -3,7 +3,7 @@
   "plugins": ["node-workspace"],
   "release-type": "node",
   "packages": {
-    "@remarkable/example": {},
+    "packages/example": {},
     "packages/example-a": {},
     "packages/example-b": {}
   }
