@@ -7,6 +7,9 @@ const StyledButton = styled.button`
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * Button text
+   */
   children: string;
 }
 
