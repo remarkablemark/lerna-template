@@ -2,6 +2,8 @@
 
 ## Usage
 
-```js
-const placeholder = require('placeholder');
+```tsx
+import Button from 'Button';
+
+<Button>Text</Button>;
 ```

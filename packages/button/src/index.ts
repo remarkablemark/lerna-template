@@ -1,3 +1,2 @@
-export default function placeholder(): string {
-  return 'placeholder';
-}
+export * from './Button';
+export { default } from './Button';
