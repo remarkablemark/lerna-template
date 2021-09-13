@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
+    "create-package": "yarn ts-node scripts/create-package",
     "lint": "lerna run lint",
     "postinstall": "husky install",
     "test": "lerna run test -- --colors"
