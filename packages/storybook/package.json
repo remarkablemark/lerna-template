@@ -1,7 +1,7 @@
 {
   "name": "storybook",
   "private": true,
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "Storybook",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {

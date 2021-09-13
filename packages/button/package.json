@@ -1,6 +1,6 @@
 {
   "name": "@remarkable/button",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "Button",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",

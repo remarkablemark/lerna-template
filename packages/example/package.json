@@ -1,6 +1,6 @@
 {
   "name": "@remarkable/example",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "example",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",
