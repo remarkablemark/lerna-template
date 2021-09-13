@@ -1,7 +1,7 @@
 import React from 'react';
-import './button.css';
+import './storybook-button.css';
 
-interface ButtonProps {
+interface StorybookButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -27,13 +27,13 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export default function StorybookButton({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
+}: StorybookButtonProps) {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
@@ -49,4 +49,4 @@ export const Button = ({
       {label}
     </button>
   );
-};
+}

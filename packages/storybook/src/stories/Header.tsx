@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from './Button';
+import StorybookButton from './StorybookButton';
 import './header.css';
 
 interface HeaderProps {
@@ -44,11 +44,11 @@ export const Header = ({
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <StorybookButton size="small" onClick={onLogout} label="Log out" />
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button
+            <StorybookButton size="small" onClick={onLogin} label="Log in" />
+            <StorybookButton
               primary
               size="small"
               onClick={onCreateAccount}
