@@ -1,4 +1,4 @@
 {
-  "*.ts": "eslint --config .eslintrc.root.json --fix",
-  "*.{html,json,md,yml}": "prettier --write"
+  "*.{js,ts,tsx}": "eslint --config .eslintrc.root.json --fix",
+  "*.{css,html,json,md,mdx,svg,yml}": "prettier --write"
 }
