@@ -36,6 +36,10 @@ Builds all packages.
 
 Deletes build artifacts from all packages.
 
+### `yarn create-package`
+
+Creates new package from template.
+
 ### `yarn lint`
 
 Lints all packages.
