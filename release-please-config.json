@@ -3,6 +3,7 @@
   "plugins": ["node-workspace"],
   "release-type": "node",
   "packages": {
+    "packages/button": {},
     "packages/example": {},
     "packages/example-a": {},
     "packages/example-b": {}
