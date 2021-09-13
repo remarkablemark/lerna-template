@@ -6,6 +6,7 @@
     "packages/button": {},
     "packages/example": {},
     "packages/example-a": {},
-    "packages/example-b": {}
+    "packages/example-b": {},
+    "packages/storybook": {}
   }
 }
