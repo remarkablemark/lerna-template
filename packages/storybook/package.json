@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "storybook": "start-storybook -p 6006"
   },
+  "dependencies": {
+    "@remarkable/button": "1.0.0-alpha"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@storybook/addon-actions": "^6.3.8",
@@ -23,8 +26,5 @@
     "prettier": "^2.4.0",
     "typescript": "^4.4.2"
   },
-  "files": [
-    "lib"
-  ],
   "license": "MIT"
 }
