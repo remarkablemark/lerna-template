@@ -36,3 +36,6 @@ jobs:
 
       - name: Test packages
         run: yarn test
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2
