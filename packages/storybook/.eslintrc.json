@@ -1,5 +1,6 @@
 {
   "extends": ["../../.eslintrc"],
+  "ignorePatterns": ["storybook-static"],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
