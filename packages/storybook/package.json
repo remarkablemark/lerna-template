@@ -8,6 +8,7 @@
     "build": "build-storybook",
     "clean": "rm -rf storybook-static",
     "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 6006"
   },

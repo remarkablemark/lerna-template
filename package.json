@@ -6,6 +6,7 @@
     "clean": "lerna run clean",
     "create-package": "yarn ts-node scripts/create-package",
     "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix",
     "postinstall": "husky install",
     "test": "lerna run test -- --colors"
   },
