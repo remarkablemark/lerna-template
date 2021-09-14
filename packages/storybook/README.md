@@ -14,10 +14,6 @@ Builds Storybook.
 
 Deletes Storybook build artifacts.
 
-### `yarn clean`
-
-Deletes Storybook build artifacts.
-
 ### `yarn lint`
 
 Lints project.
