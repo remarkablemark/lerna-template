@@ -25,8 +25,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v2
@@ -47,12 +45,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn --frozen-lockfile --prefer-offline
-
-      - name: Lint commit message
-        run: yarn commitlint --from=HEAD~1
-
-      - name: Lint packages
-        run: yarn lint
 
       - name: Build packages
         run: yarn build
