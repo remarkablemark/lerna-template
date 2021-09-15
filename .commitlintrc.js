@@ -17,6 +17,6 @@ module.exports = {
         ...readdirSync('./packages'),
       ],
     ],
-    'scope-empty': [2, 'never'],
+    'scope-empty': [1, 'never'],
   },
 };
