@@ -4,6 +4,8 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: contains(github.actor, 'github-actions') == false
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
