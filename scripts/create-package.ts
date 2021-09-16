@@ -4,7 +4,7 @@
 
 import { execSync } from 'child_process';
 import { writeFileSync } from 'fs';
-import { join, resolve } from 'path';
+import { resolve } from 'path';
 
 /**
  * Executes command.
@@ -33,7 +33,9 @@ let scope = '';
 let directory = packageName;
 
 if (packageName[0] === '@') {
-  [scope, directory] = packageName.split('/');
+  const match = packageName.split('/');
+  scope = match[0];
+  directory = match[1];
 
   if (!/^@[\w-]+$/.test(scope) || !/^[\w-]+$/.test(directory)) {
     console.error(`Invalid package name: ${packageName}`);
@@ -45,8 +47,9 @@ exec('yarn');
 
 const packages = 'packages';
 const template = 'template';
-const templatePath = join(packages, template);
-const directoryPath = join(packages, directory);
+const rootPath = resolve(__dirname, '..');
+const templatePath = resolve(__dirname, template);
+const directoryPath = resolve(rootPath, packages, directory);
 console.log(`Copying '${templatePath}' to '${directoryPath}'...`);
 exec(`cp -r ${templatePath} ${directoryPath}`);
 
@@ -58,25 +61,18 @@ exec(
 );
 
 console.log(`Updating '${packageName}' package.json...`);
-const packageJsonPath = resolve(__dirname, '..', directoryPath, 'package.json');
+const packageJsonPath = resolve(directoryPath, 'package.json');
 const packageJson = require(packageJsonPath);
 delete packageJson.private;
-if (!scope) {
-  delete packageJson.publishConfig;
-}
 writeFileSync(packageJsonPath, stringify(packageJson));
 
 const releasePleaseConfigFilename = 'release-please-config.json';
-const releasePleaseConfigPath = resolve(
-  __dirname,
-  '..',
-  releasePleaseConfigFilename
-);
+const releasePleaseConfigPath = resolve(rootPath, releasePleaseConfigFilename);
 console.log(
   `Adding package '${directoryPath}' to '${releasePleaseConfigFilename}'...`
 );
 const releasePleaseConfig = require(releasePleaseConfigPath);
-releasePleaseConfig.packages[`${directoryPath}`] = {};
+releasePleaseConfig.packages[`${packages}/${directory}`] = {};
 writeFileSync(releasePleaseConfigPath, stringify(releasePleaseConfig));
 
 exec('yarn');

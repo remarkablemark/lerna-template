@@ -1,4 +1,4 @@
-import placeholder from '.';
+import placeholder from '../src/';
 
 describe('placeholder', () => {
   it('returns "placeholder"', () => {
