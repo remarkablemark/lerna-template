@@ -16,7 +16,7 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          command: manifest-pr
+          command: manifest
 
   publish:
     needs: release-please
