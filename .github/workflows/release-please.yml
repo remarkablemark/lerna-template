@@ -8,7 +8,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
+      releases_created: ${{ steps.release.outputs.releases_created }}
 
     steps:
       - name: Release Please
@@ -21,7 +21,7 @@ jobs:
   publish:
     needs: release-please
     runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.release_created }}
+    if: ${{ needs.release-please.outputs.releases_created }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
