@@ -8,6 +8,7 @@
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "postinstall": "husky install",
+    "storybook": "lerna run storybook",
     "test": "lerna run test -- --colors"
   },
   "devDependencies": {
