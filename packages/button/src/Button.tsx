@@ -13,6 +13,9 @@ export interface ButtonProps
   children: string;
 }
 
+/**
+ * Button component
+ */
 export default function Button(
   props: ButtonProps
 ): React.ReactElement<ButtonProps> {

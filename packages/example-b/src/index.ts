@@ -1,3 +1,6 @@
+/**
+ * Placeholder b
+ */
 export default function b(): string {
   return 'b';
 }
