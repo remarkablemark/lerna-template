@@ -19,12 +19,5 @@
       "example-a/*": ["example-a/src/*"],
       "example-b/*": ["example-b/src/*"]
     }
-  },
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx"
-  ]
+  }
 }
