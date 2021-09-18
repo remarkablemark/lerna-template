@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "clean": "lerna run clean",
+    "clean": "lerna run clean --parallel",
     "create-package": "yarn ts-node scripts/create-package",
     "lint": "lerna run lint",
-    "lint:fix": "lerna run lint:fix",
+    "lint:fix": "lerna run lint:fix --parallel",
     "postinstall": "husky install",
     "test": "lerna run test -- --colors"
   },
