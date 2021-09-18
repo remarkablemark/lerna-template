@@ -1,7 +1,5 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import Button from '@remarkable/button/src/Button';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'Example/Button',

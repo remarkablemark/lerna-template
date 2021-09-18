@@ -1,7 +1,6 @@
-import React from 'react';
 import './storybook-button.css';
 
-interface StorybookButtonProps {
+export interface StorybookButtonProps {
   /**
    * Is this the principal call to action on the page?
    */

@@ -1,9 +1,8 @@
-import React from 'react';
-
-import StorybookButton from './StorybookButton';
 import './header.css';
 
-interface HeaderProps {
+import StorybookButton from './StorybookButton';
+
+export interface HeaderProps {
   user?: Record<string, never>;
   onLogin: () => void;
   onLogout: () => void;
