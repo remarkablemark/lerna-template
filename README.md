@@ -32,27 +32,63 @@ In the root directory, you can run:
 
 ### `yarn build`
 
-Builds all packages.
+Builds all packages:
+
+```sh
+yarn build
+```
 
 ### `yarn clean`
 
-Deletes build artifacts from all packages.
+Deletes build and test artifacts from all packages:
+
+```sh
+yarn clean
+```
 
 ### `yarn create-package`
 
-Creates new package from template.
+Creates a new package from the template. Example:
+
+```sh
+yarn create-package my-package
+```
 
 ### `yarn lint`
 
-Lints all packages.
+Lints all packages:
+
+```sh
+yarn lint
+```
 
 ### `yarn lint:fix`
 
-Fixes lint errors for all packages.
+Fixes lint errors for all packages:
+
+```sh
+yarn lint:fix
+```
+
+### `yarn storybook`
+
+Runs Storybook:
+
+```sh
+yarn storybook
+```
 
 ### `yarn test`
 
-Runs tests for all packages.
+Runs tests for all packages:
+
+```sh
+yarn test
+```
+
+## Release
+
+Release and publish is automated with [Release Please](https://github.com/googleapis/release-please).
 
 ## License
 
