@@ -48,7 +48,7 @@ exec('yarn');
 const packages = 'packages';
 const template = 'template';
 const rootPath = resolve(__dirname, '..');
-const templatePath = resolve(__dirname, template);
+const templatePath = resolve(rootPath, 'templates', template);
 const directoryPath = resolve(rootPath, packages, directory);
 console.log(`Copying '${templatePath}' to '${directoryPath}'...`);
 exec(`cp -r ${templatePath} ${directoryPath}`);
