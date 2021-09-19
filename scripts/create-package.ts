@@ -46,7 +46,7 @@ if (packageName[0] === '@') {
 exec('yarn');
 
 const packages = 'packages';
-const template = 'template';
+const template = 'typescript-template';
 const rootPath = resolve(__dirname, '..');
 const templatePath = resolve(rootPath, 'templates', template);
 const directoryPath = resolve(rootPath, packages, directory);
