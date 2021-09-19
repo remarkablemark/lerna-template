@@ -65,8 +65,9 @@ jobs:
 
       - name: Create package
         run: |
-          yarn create-package "${PACKAGE_NAME}1"
-          yarn create-package "@scope/${PACKAGE_NAME}2" --template=typescript
+          yarn create-package "${PACKAGE_NAME}-1"
+          yarn create-package "@scope/${PACKAGE_NAME}-2" --template=typescript
+          yarn create-package "${PACKAGE_NAME}-3" --template react
 
       - name: Lint created packages
         run: yarn lerna run lint --scope="${PACKAGE_NAME}*"
