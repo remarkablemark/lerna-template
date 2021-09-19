@@ -21,5 +21,5 @@ npm install typescript-template --save
 ## Usage
 
 ```ts
-import placeholder from 'placeholder';
+import main from 'typescript-template';
 ```
