@@ -1,0 +1,6 @@
+{
+  "extends": "../tsconfig.root",
+  "compilerOptions": {
+    "noEmit": "true"
+  }
+}
