@@ -4,8 +4,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: contains(github.actor, 'github-actions') == false
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -41,3 +39,37 @@ jobs:
 
       - name: Codecov
         uses: codecov/codecov-action@v2
+
+  scripts:
+    runs-on: macos-latest
+    env:
+      PACKAGE_NAME: test-${{ github.run_id }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Create package
+        run: |
+          yarn create-package "${PACKAGE_NAME}1"
+          yarn create-package "@scope/${PACKAGE_NAME}2" --template=typescript
+
+      - name: Lint created packages
+        run: yarn lerna run lint --scope="${PACKAGE_NAME}*"
+
+      - name: Test created packages
+        run: yarn lerna run test --scope="${PACKAGE_NAME}*"
