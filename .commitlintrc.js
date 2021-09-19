@@ -14,6 +14,7 @@ module.exports = {
         'packages',
         'release',
         'root',
+        'scripts',
         'templates',
         ...readdirSync('./packages'),
         ...readdirSync('./templates'),
