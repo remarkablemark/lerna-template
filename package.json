@@ -38,7 +38,8 @@
     "yargs": "^17.1.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "templates/*"
   ],
   "license": "MIT"
 }
