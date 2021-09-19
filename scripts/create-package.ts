@@ -5,6 +5,7 @@
 import { execSync } from 'child_process';
 import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
+import prettier from 'prettier';
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs/yargs';
 
@@ -19,19 +20,22 @@ const exec = (command: string) => execSync(command, { stdio: 'inherit' });
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const stringify = (data: any) => JSON.stringify(data, null, 2) + '\n';
 
-const templateChoices = ['typescript'] as const;
-
-let scope = '';
-let directory = '';
-let packageName = '';
+const PACKAGES = 'packages';
 
 const path = {
   directory: '',
-  packages: resolve(__dirname, '../packages'),
+  packages: resolve(__dirname, `../${PACKAGES}`),
   root: resolve(__dirname, '..'),
   template: '',
   templates: resolve(__dirname, '../templates'),
 };
+
+let scope = '';
+let directory = '';
+let packageName = '';
+let template = 'typescript-template';
+
+const templateChoices = ['react', 'typescript'] as const;
 
 yargs(hideBin(process.argv))
   .usage('Usage: yarn $0 <name> --template=[string]')
@@ -67,21 +71,30 @@ yargs(hideBin(process.argv))
       throw new Error(`Package directory exists: ${directory}`);
     }
 
+    if (argv.template === 'react') {
+      template = 'react-template';
+    }
+
+    path.directory = resolve(path.packages, directory);
+    path.template = resolve(path.templates, template);
     return true;
   })
   .parseSync();
 
+/**
+ * Install.
+ */
 exec('yarn');
 
-const packages = 'packages';
-const template = 'typescript-template';
-
-path.directory = resolve(path.packages, directory);
-path.template = resolve(path.templates, template);
-
+/**
+ * Copy from template to package.
+ */
 console.log(`Copying '${path.template}' to '${path.directory}'...`);
 exec(`cp -r ${path.template} ${path.directory}`);
 
+/**
+ * Update template.
+ */
 console.log(
   `Replacing string '${template}' with '${packageName}' in '${path.directory}'...`
 );
@@ -95,15 +108,24 @@ const packageJson = require(packageJsonPath);
 delete packageJson.private;
 writeFileSync(packageJsonPath, stringify(packageJson));
 
+/**
+ * Update release-please.
+ */
 const releasePleaseConfigFilename = 'release-please-config.json';
 const releasePleaseConfigPath = resolve(path.root, releasePleaseConfigFilename);
 console.log(
   `Adding package '${path.directory}' to '${releasePleaseConfigFilename}'...`
 );
 const releasePleaseConfig = require(releasePleaseConfigPath);
-releasePleaseConfig.packages[`${packages}/${directory}`] = {};
-writeFileSync(releasePleaseConfigPath, stringify(releasePleaseConfig));
+releasePleaseConfig.packages[`${PACKAGES}/${directory}`] = {};
+writeFileSync(
+  releasePleaseConfigPath,
+  prettier.format(stringify(releasePleaseConfig), { parser: 'json' })
+);
 
+/**
+ * Install, clean, and build.
+ */
 exec('yarn');
 exec(`yarn lerna run clean --scope=${packageName}`);
 exec(`yarn lerna run build --scope=${packageName}`);
