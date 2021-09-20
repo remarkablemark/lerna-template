@@ -1,6 +1,12 @@
 import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import Component from '../src';
+
+it('is accessibile', async () => {
+  const { container } = render(<Component>text</Component>);
+  expect(await axe(container)).toHaveNoViolations();
+});
 
 it('renders text', () => {
   const text = 'text';
