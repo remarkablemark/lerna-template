@@ -11,14 +11,6 @@
     "noEmit": true,
     "strict": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "baseUrl": "packages",
-    "paths": {
-      "@remarkable/button/*": ["button/src/*"],
-      "@remarkable/example/*": ["example/src/*"],
-      "example-a": ["example-a/src"],
-      "example-a/*": ["example-a/src/*"],
-      "example-b/*": ["example-b/src/*"]
-    }
+    "esModuleInterop": true
   }
 }
