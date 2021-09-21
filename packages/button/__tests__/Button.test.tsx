@@ -3,7 +3,7 @@ import { axe } from 'jest-axe';
 
 import Button from '../src';
 
-it('is accessibile', async () => {
+it('is accessible', async () => {
   const { container } = render(<Button>text</Button>);
   expect(await axe(container)).toHaveNoViolations();
 });
