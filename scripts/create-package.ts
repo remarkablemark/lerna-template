@@ -18,7 +18,7 @@ const exec = (command: string) => execSync(command, { stdio: 'inherit' });
  * Converts input to JSON string.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const stringify = (data: any) => JSON.stringify(data);
+const stringify = (data: any) => JSON.stringify(data, null, 2) + '\n';
 
 const PACKAGES = 'packages';
 
