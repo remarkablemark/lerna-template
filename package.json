@@ -9,6 +9,7 @@
     "lint:fix": "lerna run lint:fix --parallel",
     "postinstall": "husky install",
     "storybook": "lerna run storybook",
+    "sync-modules": "lerna-script sync-modules",
     "test": "lerna run test -- --colors"
   },
   "devDependencies": {
