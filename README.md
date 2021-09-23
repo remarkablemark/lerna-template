@@ -8,8 +8,17 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/)
-- [Yarn 1](https://classic.yarnpkg.com/)
+[Node.js](https://nodejs.org/):
+
+```sh
+brew install node
+```
+
+[Yarn 1](https://classic.yarnpkg.com/):
+
+```sh
+brew install yarn
+```
 
 ## Install
 
@@ -77,6 +86,16 @@ Runs Storybook:
 ```sh
 yarn storybook
 ```
+
+#### `yarn sync-modules`
+
+[Syncs dependencies for modules](https://github.com/wix/lerna-script/tree/master/tasks/modules):
+
+```sh
+yarn sync-modules
+```
+
+Running this step after release is necessary because [Release Please](https://github.com/googleapis/release-please) (not [Lerna](https://github.com/lerna/lerna)) is handling versioning and [Release Please does not update dependent modules](https://github.com/googleapis/release-please/issues/1032).
 
 ### `yarn test`
 
