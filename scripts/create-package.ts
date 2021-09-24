@@ -5,7 +5,6 @@
 import { execSync } from 'child_process';
 import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import prettier from 'prettier';
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs/yargs';
 
@@ -107,21 +106,6 @@ const packageJsonPath = resolve(path.directory, 'package.json');
 const packageJson = require(packageJsonPath);
 delete packageJson.private;
 writeFileSync(packageJsonPath, stringify(packageJson));
-
-/**
- * Update release-please.
- */
-const releasePleaseConfigFilename = 'release-please-config.json';
-const releasePleaseConfigPath = resolve(path.root, releasePleaseConfigFilename);
-console.log(
-  `Adding package '${path.directory}' to '${releasePleaseConfigFilename}'...`
-);
-const releasePleaseConfig = require(releasePleaseConfigPath);
-releasePleaseConfig.packages[`${PACKAGES}/${directory}`] = {};
-writeFileSync(
-  releasePleaseConfigPath,
-  prettier.format(stringify(releasePleaseConfig), { parser: 'json' })
-);
 
 /**
  * Install, clean, and build.

@@ -9,7 +9,6 @@
     "lint:fix": "lerna run lint:fix --parallel",
     "postinstall": "husky install",
     "storybook": "lerna run storybook",
-    "sync-modules": "lerna-script sync-modules",
     "test": "lerna run test -- --colors"
   },
   "devDependencies": {
@@ -31,8 +30,6 @@
     "jest": "^27.1.1",
     "jest-axe": "^5.0.1",
     "lerna": "^4.0.0",
-    "lerna-script": "^1.4.0",
-    "lerna-script-tasks-modules": "^1.4.0",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
     "react": "^17.0.2",
@@ -44,8 +41,7 @@
     "yargs": "^17.1.1"
   },
   "workspaces": [
-    "packages/*",
-    "templates/*"
+    "packages/*"
   ],
   "license": "MIT"
 }

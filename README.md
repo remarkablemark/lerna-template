@@ -47,6 +47,18 @@ Builds all packages:
 yarn build
 ```
 
+To build a single package:
+
+```sh
+yarn build --scope=<packageName>
+```
+
+For example:
+
+```sh
+yarn build --scope=example-a
+```
+
 ### `yarn clean`
 
 Deletes build and test artifacts from all packages:
@@ -55,12 +67,36 @@ Deletes build and test artifacts from all packages:
 yarn clean
 ```
 
+To clean a single package:
+
+```sh
+yarn clean --scope=<packageName>
+```
+
+For example:
+
+```sh
+yarn clean --scope=example-a
+```
+
 ### `yarn create-package`
 
-Creates a new package from the template. Example:
+Creates a new package from the template:
 
 ```sh
 yarn create-package my-package
+```
+
+Create package `foo` using TypeScript template (default):
+
+```sh
+yarn create-package foo --template=typescript
+```
+
+Create package `bar` using React template:
+
+```sh
+yarn create-package bar --template=react
 ```
 
 ### `yarn lint`
@@ -71,12 +107,36 @@ Lints all packages:
 yarn lint
 ```
 
+To lint a single package:
+
+```sh
+yarn lint --scope=<packageName>
+```
+
+For example:
+
+```sh
+yarn lint --scope=example-a
+```
+
 ### `yarn lint:fix`
 
 Fixes lint errors for all packages:
 
 ```sh
 yarn lint:fix
+```
+
+To fix lint errors for a single package:
+
+```sh
+yarn lint:fix --scope=<packageName>
+```
+
+For example:
+
+```sh
+yarn lint:fix --scope=example-a
 ```
 
 ### `yarn storybook`
@@ -87,16 +147,6 @@ Runs Storybook:
 yarn storybook
 ```
 
-#### `yarn sync-modules`
-
-[Syncs dependencies for modules](https://github.com/wix/lerna-script/tree/master/tasks/modules):
-
-```sh
-yarn sync-modules
-```
-
-Running this step after release is necessary because [Release Please](https://github.com/googleapis/release-please) (not [Lerna](https://github.com/lerna/lerna)) is handling versioning and [Release Please does not update dependent modules](https://github.com/googleapis/release-please/issues/1032).
-
 ### `yarn test`
 
 Runs tests for all packages:
@@ -105,9 +155,38 @@ Runs tests for all packages:
 yarn test
 ```
 
+To run tests for a single package:
+
+```sh
+yarn test --scope=<packageName>
+```
+
+For example:
+
+```sh
+yarn test --scope=example-a
+```
+
 ## Release
 
-Release and publish is automated with [Release Please](https://github.com/googleapis/release-please).
+Release is automated with [Lerna](https://lerna.js.org/).
+
+If npm publish failed:
+
+1. Delete the Git tags on remote
+2. Rerun the [publish](https://github.com/remarkablemark/lerna-template/actions/workflows/publish.yml) workflow
+
+Because Lerna commits and pushes the release to the remote repository, branch protection rules have been disabled.
+
+To prevent race conditions with Lerna release, don't merge PRs until after the publish workflow is done.
+
+### Canary
+
+To release a canary version for testing, run the [publish](https://github.com/remarkablemark/lerna-template/actions/workflows/publish.yml) workflow with a branch other than `master`.
+
+### Dry Run
+
+To see the to-be-updated versions, run the [publish](https://github.com/remarkablemark/lerna-template/actions/workflows/publish.yml) workflow and change `N` to `y` under **Dry run?**.
 
 ## License
 
