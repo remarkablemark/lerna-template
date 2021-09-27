@@ -4,7 +4,14 @@
       "conventionalCommits": true,
       "createRelease": "github",
       "exact": true,
-      "ignoreChanges": ["**/*.md", "**/*.spec.*", "**/*.test.*"],
+      "ignoreChanges": [
+        "**/*.md",
+        "**/*.spec.*",
+        "**/*.test.*",
+        "**/*config*",
+        "**/__fixtures__/**",
+        "**/__tests__/**"
+      ],
       "message": "chore(release): publish",
       "yes": true
     }
