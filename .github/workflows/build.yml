@@ -2,7 +2,7 @@ name: build
 on:
   pull_request_target:
     types: [labeled]
-  push: branches
+  push:
 
 jobs:
   build:
