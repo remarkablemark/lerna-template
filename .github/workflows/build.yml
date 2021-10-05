@@ -1,7 +1,8 @@
 name: build
 on:
-  - push
-  - pull_request_target
+  pull_request_target:
+    types: [labeled]
+  push: branches
 
 jobs:
   build:
@@ -78,7 +79,7 @@ jobs:
         run: yarn lerna run test --scope="${PACKAGE_NAME}*"
 
   auto-approve:
-    if: github.event_name == 'pull_request_target'
+    if: github.event_name == 'pull_request_target' && contains(github.event.pull_request.labels.*.name, 'dependencies')
     needs: [build, scripts]
     runs-on: ubuntu-latest
     steps:
