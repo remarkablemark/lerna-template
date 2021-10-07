@@ -1,8 +1,5 @@
 name: build
-on:
-  pull_request_target:
-    types: [labeled]
-  push:
+on: [push, pull_request]
 
 jobs:
   build:
@@ -77,14 +74,3 @@ jobs:
 
       - name: Test created packages
         run: yarn lerna run test --scope="${PACKAGE_NAME}*"
-
-  auto-approve:
-    if: github.event_name == 'pull_request_target' && contains(github.event.pull_request.labels.*.name, 'dependencies')
-    needs: [build, scripts]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Auto Approve
-        uses: hmarr/auto-approve-action@v2
-        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
