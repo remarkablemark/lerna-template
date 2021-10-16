@@ -11,6 +11,7 @@ module.exports = {
         'all',
         'deps',
         'deps-dev',
+        'github',
         'packages',
         'release',
         'root',
