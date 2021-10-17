@@ -13,7 +13,7 @@
     "test:watch": "jest --watch"
   },
   "peerDependencies": {
-    "react": "16 || 17",
+    "react": "17",
     "styled-components": "4 || 5"
   },
   "files": [
