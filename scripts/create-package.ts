@@ -98,7 +98,7 @@ console.log(
   `Replacing string '${template}' with '${packageName}' in '${path.directory}'...`
 );
 exec(
-  `grep -rl '${template}' '${path.directory}' | xargs sed -i '' -e 's|${template}|${packageName}|g'`
+  `LC_CTYPE=C && LANG=C && grep -rl '${template}' '${path.directory}' | xargs sed -i '' -e 's|${template}|${packageName}|g'`
 );
 
 console.log(`Updating '${packageName}' package.json...`);
