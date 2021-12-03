@@ -1,14 +1,14 @@
-name: build
+name: scripts
 on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  scripts:
+    runs-on: macos-latest
+    env:
+      PACKAGE_NAME: test_${{ github.run_id }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -25,17 +25,14 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --prefer-offline
 
-      - name: Lint commit message
-        run: yarn commitlint --from=HEAD~1
+      - name: Create package
+        run: |
+          yarn create-package "${PACKAGE_NAME}_1"
+          yarn create-package "@scope/${PACKAGE_NAME}_2" --template=typescript
+          yarn create-package "${PACKAGE_NAME}_3" --template react
 
-      - name: Build packages
-        run: yarn build
+      - name: Lint created packages
+        run: yarn lerna run lint --scope="${PACKAGE_NAME}*"
 
-      - name: Lint packages
-        run: yarn lint
-
-      - name: Test packages
-        run: yarn test
-
-      - name: Codecov
-        uses: codecov/codecov-action@v2
+      - name: Test created packages
+        run: yarn lerna run test --scope="${PACKAGE_NAME}*"
