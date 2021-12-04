@@ -29,7 +29,7 @@ git clone https://github.com/remarkablemark/lerna-template.git
 cd lerna-template
 ```
 
-Install dependencies:
+Install the dependencies:
 
 ```sh
 yarn
@@ -41,16 +41,16 @@ In the root directory, you can run:
 
 ### `yarn build`
 
-Builds all packages:
+Build all packages:
 
 ```sh
 yarn build
 ```
 
-To build a single package:
+Build a single package:
 
 ```sh
-yarn build --scope=<packageName>
+yarn build --scope=<package-name>
 ```
 
 For example:
@@ -61,16 +61,16 @@ yarn build --scope=example-a
 
 ### `yarn clean`
 
-Deletes build and test artifacts from all packages:
+Delete build artifacts for all packages:
 
 ```sh
 yarn clean
 ```
 
-To clean a single package:
+Clean a single package:
 
 ```sh
-yarn clean --scope=<packageName>
+yarn clean --scope=<package-name>
 ```
 
 For example:
@@ -81,19 +81,25 @@ yarn clean --scope=example-a
 
 ### `yarn create-package`
 
-Creates a new package from the template:
+Create a package:
 
 ```sh
-yarn create-package my-package
+yarn create-package
 ```
 
-Create package `foo` using TypeScript template (default):
+Create a package using the CLI:
+
+```sh
+yarn create-package <package-name> --template=<template>
+```
+
+Create package `foo` using the TypeScript template (default):
 
 ```sh
 yarn create-package foo --template=typescript
 ```
 
-Create package `bar` using React template:
+Create package `bar` using the React template:
 
 ```sh
 yarn create-package bar --template=react
@@ -101,16 +107,16 @@ yarn create-package bar --template=react
 
 ### `yarn lint`
 
-Lints all packages:
+Lint all packages:
 
 ```sh
 yarn lint
 ```
 
-To lint a single package:
+Lint a single package:
 
 ```sh
-yarn lint --scope=<packageName>
+yarn lint --scope=<package-name>
 ```
 
 For example:
@@ -121,16 +127,16 @@ yarn lint --scope=example-a
 
 ### `yarn lint:fix`
 
-Fixes lint errors for all packages:
+Fix lint errors for all packages:
 
 ```sh
 yarn lint:fix
 ```
 
-To fix lint errors for a single package:
+Fix lint errors for a single package:
 
 ```sh
-yarn lint:fix --scope=<packageName>
+yarn lint:fix --scope=<package-name>
 ```
 
 For example:
@@ -141,7 +147,7 @@ yarn lint:fix --scope=example-a
 
 ### `yarn storybook`
 
-Runs Storybook:
+Start Storybook server:
 
 ```sh
 yarn storybook
@@ -149,16 +155,16 @@ yarn storybook
 
 ### `yarn test`
 
-Runs tests for all packages:
+Run tests for all packages:
 
 ```sh
 yarn test
 ```
 
-To run tests for a single package:
+Run tests for a single package:
 
 ```sh
-yarn test --scope=<packageName>
+yarn test --scope=<package-name>
 ```
 
 For example:
