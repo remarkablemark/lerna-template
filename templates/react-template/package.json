@@ -15,7 +15,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "17",
+    "react": "17 || 18",
     "styled-components": "4 || 5"
   },
   "files": [
