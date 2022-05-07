@@ -192,7 +192,7 @@ To release a canary version for testing, run the [publish](https://github.com/re
 
 ### Dry Run
 
-To see the to-be-updated versions, run the [publish](https://github.com/remarkablemark/lerna-template/actions/workflows/publish.yml) workflow and change `N` to `y` under **Dry run?**.
+To see the to-be-updated versions, run the [publish](https://github.com/remarkablemark/lerna-template/actions/workflows/publish.yml) workflow and enable **Dry run**.
 
 ## License
 
