@@ -32,7 +32,7 @@
     "jest-axe": "^6.0.0",
     "jest-environment-jsdom": "^28.1.0",
     "lerna": "^5.0.0",
-    "lint-staged": "^12.4.2",
+    "lint-staged": "^13.0.0",
     "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
