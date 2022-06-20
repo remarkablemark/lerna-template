@@ -3818,22 +3818,14 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest-axe@^3.5.3":
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.3.tgz#5af918553388aa0a448af75603b44093985778c6"
-  integrity sha512-ad9qI9f+00N8IlOuGh6dnZ6o0BDdV9VhGfTUr1zCejsPvOfZd6eohffe4JYxUoUuRYEftyMcaJ6Ux4+MsOpGHg==
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.4.tgz#3217668ab114fdfb67da3b3f60caf18dcbc18b2e"
+  integrity sha512-S0M+Etke9v3o0PjjfA4ijoU8G0+eI+lblpGYFYw2t+PPPnPPzJBX7UKLoQjz1SfIp+Hf/bNMFvoBX8zlFVzdrQ==
   dependencies:
     "@types/jest" "*"
     axe-core "^3.5.5"
 
-"@types/jest@*":
-  version "28.1.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-28.1.0.tgz#6107d7f8cf46d994e4de23e11f873d61bafe5573"
-  integrity sha512-ITfF6JJIl9zbEi2k6NmhNE/BiDqfsI/ceqfvdaWaPbcrCpYyyRq4KtDQIWh6vQUru6SqwppODiom/Zhid+np6A==
-  dependencies:
-    jest-matcher-utils "^27.0.0"
-    pretty-format "^27.0.0"
-
-"@types/jest@^28.1.1":
+"@types/jest@*", "@types/jest@^28.1.1":
   version "28.1.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-28.1.1.tgz#8c9ba63702a11f8c386ee211280e8b68cb093cd1"
   integrity sha512-C2p7yqleUKtCkVjlOur9BWVA4HgUQmEj/HWCt5WzZ5mLXrWnyIfl0wGuArc+kBXsy0ZZfLp+7dywB4HtSVYGVA==
