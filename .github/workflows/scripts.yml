@@ -1,9 +1,9 @@
 name: scripts
-on: [push, pull_request]
+on: push
 
 jobs:
   scripts:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     env:
       PACKAGE_NAME: test_${{ github.run_id }}
     steps:
