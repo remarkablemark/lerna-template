@@ -8,7 +8,7 @@ jobs:
       PACKAGE_NAME: test_${{ github.run_id }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
