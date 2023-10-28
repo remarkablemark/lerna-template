@@ -5,12 +5,12 @@
   "description": "Storybook",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
-    "build": "build-storybook",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "clean": "rm -rf storybook-static",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "start": "yarn storybook",
-    "storybook": "start-storybook -p 6006"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider yarn storybook",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006"
   },
   "dependencies": {
     "@remarkable/button": "1.0.0-alpha"
