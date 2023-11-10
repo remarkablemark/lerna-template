@@ -6,18 +6,18 @@
 
 In the project directory, you can run:
 
-### `yarn build`
+### `npm run build`
 
 Builds Storybook.
 
-### `yarn clean`
+### `npm run clean`
 
 Deletes Storybook build artifacts.
 
-### `yarn lint`
+### `npm run lint`
 
 Lints project.
 
-### `yarn storybook`
+### `npm run storybook`
 
 Runs Storybook.

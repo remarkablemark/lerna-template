@@ -37,7 +37,7 @@ let template = 'typescript-template';
 const templateChoices = ['react', 'typescript'] as const;
 
 yargs(hideBin(process.argv))
-  .usage('Usage: yarn $0 <name> --template=[string]')
+  .usage('Usage: npm run $0 <name> -- --template=[string]')
   .command('<name>', 'Create package name', (yargs) =>
     yargs.positional('name', {
       describe: 'package name',
@@ -83,7 +83,7 @@ yargs(hideBin(process.argv))
 /**
  * Install.
  */
-exec('yarn');
+exec('npm install');
 
 /**
  * Copy from template to package.
@@ -113,6 +113,6 @@ writeFileSync(packageJsonPath, stringify(packageJson));
 /**
  * Install, clean, and build.
  */
-exec('yarn');
-exec(`yarn lerna run clean --scope=${packageName}`);
-exec(`yarn lerna run build --scope=${packageName}`);
+exec('npm install');
+exec(`npx lerna run clean --scope=${packageName}`);
+exec(`npx lerna run build --scope=${packageName}`);

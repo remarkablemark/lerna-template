@@ -10,29 +10,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cache: npm
+          node-version-file: .nvmrc
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --prefer-offline
+        run: npm ci --prefer-offline
 
       - name: Create package
         run: |
-          yarn create-package "${PACKAGE_NAME}_1"
-          yarn create-package "@scope/${PACKAGE_NAME}_2" --template=typescript
-          yarn create-package "${PACKAGE_NAME}_3" --template react
+          npm run create-package "${PACKAGE_NAME}_1"
+          npm run create-package "@scope/${PACKAGE_NAME}_2" -- --template=typescript
+          npm run create-package "${PACKAGE_NAME}_3" -- --template react
 
       - name: Lint created packages
-        run: yarn lerna run lint --scope="${PACKAGE_NAME}*"
+        run: npx lerna run lint --scope="${PACKAGE_NAME}*"
 
       - name: Test created packages
-        run: yarn lerna run test --scope="${PACKAGE_NAME}*"
+        run: npx lerna run test --scope="${PACKAGE_NAME}*"

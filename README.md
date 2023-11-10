@@ -8,17 +8,8 @@
 
 ## Prerequisites
 
-[Node.js](https://nodejs.org/):
-
-```sh
-brew install node
-```
-
-[Yarn 1](https://classic.yarnpkg.com/):
-
-```sh
-brew install yarn
-```
+- [Node.js](https://nodejs.org/):
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm):
 
 ## Install
 
@@ -32,145 +23,145 @@ cd lerna-template
 Install the dependencies:
 
 ```sh
-yarn
+npm install
 ```
 
 ## Available Scripts
 
 In the root directory, you can run:
 
-### `yarn build`
+### `npm run build`
 
-Build all packages:
+Builds all packages:
 
 ```sh
-yarn build
+npm run build
 ```
 
-Build a single package:
+Builds a single package:
 
 ```sh
-yarn build --scope=<package-name>
-```
-
-For example:
-
-```sh
-yarn build --scope=example-a
-```
-
-### `yarn clean`
-
-Delete build artifacts for all packages:
-
-```sh
-yarn clean
-```
-
-Clean a single package:
-
-```sh
-yarn clean --scope=<package-name>
+npm run build -- --scope=<package-name>
 ```
 
 For example:
 
 ```sh
-yarn clean --scope=example-a
+npm run build -- --scope=example-a
 ```
 
-### `yarn create-package`
+### `npm run clean`
 
-Create a package:
+Deletes build artifacts for all packages:
 
 ```sh
-yarn create-package
+npm run clean
 ```
 
-Create a package using the CLI:
+Cleans a single package:
 
 ```sh
-yarn create-package <package-name> --template=<template>
-```
-
-Create package `foo` using the TypeScript template (default):
-
-```sh
-yarn create-package foo --template=typescript
-```
-
-Create package `bar` using the React template:
-
-```sh
-yarn create-package bar --template=react
-```
-
-### `yarn lint`
-
-Lint all packages:
-
-```sh
-yarn lint
-```
-
-Lint a single package:
-
-```sh
-yarn lint --scope=<package-name>
+npm run clean -- --scope=<package-name>
 ```
 
 For example:
 
 ```sh
-yarn lint --scope=example-a
+npm run clean -- --scope=example-a
 ```
 
-### `yarn lint:fix`
+### `npm run create-package`
 
-Fix lint errors for all packages:
+Creates a package:
 
 ```sh
-yarn lint:fix
+npm run create-package
 ```
 
-Fix lint errors for a single package:
+Creates a package using the CLI:
 
 ```sh
-yarn lint:fix --scope=<package-name>
+npm run create-package <package-name> -- --template=<template>
+```
+
+Creates package `foo` using the TypeScript template (default):
+
+```sh
+npm run create-package foo -- --template=typescript
+```
+
+Creates package `bar` using the React template:
+
+```sh
+npm run create-package bar -- --template=react
+```
+
+### `npm run lint`
+
+Lints all packages:
+
+```sh
+npm run lint
+```
+
+Lints a single package:
+
+```sh
+npm run lint -- --scope=<package-name>
 ```
 
 For example:
 
 ```sh
-yarn lint:fix --scope=example-a
+npm run lint -- --scope=example-a
 ```
 
-### `yarn storybook`
+### `npm run lint:fix`
 
-Start Storybook server:
+Fixes lint errors for all packages:
 
 ```sh
-yarn storybook
+npm run lint:fix
 ```
 
-### `yarn test`
-
-Run tests for all packages:
+Fixes lint errors for a single package:
 
 ```sh
-yarn test
-```
-
-Run tests for a single package:
-
-```sh
-yarn test --scope=<package-name>
+npm run lint:fix -- --scope=<package-name>
 ```
 
 For example:
 
 ```sh
-yarn test --scope=example-a
+npm run lint:fix -- --scope=example-a
+```
+
+### `npm run storybook`
+
+Runs Storybook server:
+
+```sh
+npm run storybook
+```
+
+### `npm test`
+
+Runs tests for all packages:
+
+```sh
+npm test
+```
+
+Runs tests for a single package:
+
+```sh
+npm test -- --scope=<package-name>
+```
+
+For example:
+
+```sh
+npm run test -- --scope=example-a
 ```
 
 ## Release
