@@ -1,5 +1,5 @@
 name: build
-on: push
+on: [push, pull_request]
 
 jobs:
   build:
@@ -13,26 +13,23 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          cache: yarn
+          cache: npm
           node-version-file: .nvmrc
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --prefer-offline
+        run: npm ci --prefer-offline
 
       - name: Lint commit message
-        run: yarn commitlint --from=HEAD~1
+        run: npx commitlint --from=HEAD~1
 
       - name: Build packages
-        run: yarn build
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
-          STORYBOOK_DISABLE_TELEMETRY: 1
+        run: npm run build
 
       - name: Lint packages
-        run: yarn lint
+        run: npm run lint
 
       - name: Test packages
-        run: yarn test
+        run: npm test
 
       - name: Codecov
         uses: codecov/codecov-action@v3

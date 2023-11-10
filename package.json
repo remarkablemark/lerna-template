@@ -43,7 +43,7 @@
     "yargs": "17.7.2"
   },
   "workspaces": [
-    "packages/*"
+    "./packages/*"
   ],
   "license": "MIT"
 }

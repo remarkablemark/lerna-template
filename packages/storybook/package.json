@@ -5,11 +5,11 @@
   "description": "Storybook",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
-    "build": "yarn build-storybook",
+    "build": "npm run build-storybook",
     "build-storybook": "storybook build",
     "clean": "rm -rf storybook-static",
     "lint": "eslint .",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "lint:tsc": "tsc --noEmit",
     "storybook": "storybook dev -p 6006"
   },

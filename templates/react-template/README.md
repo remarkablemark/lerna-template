@@ -4,16 +4,16 @@
 
 ## Install
 
+[npm](https://www.npmjs.com/package/react-template):
+
+```sh
+npm install react-template
+```
+
 [Yarn](https://yarnpkg.com/package/react-template):
 
 ```sh
 yarn add react-template
-```
-
-[npm](https://www.npmjs.com/package/react-template):
-
-```sh
-npm install react-template --save
 ```
 
 [UNPKG](https://unpkg.com/browse/react-template/)
