@@ -19,7 +19,7 @@
     "@types/jest": "29.5.7",
     "@types/jest-axe": "3.5.5",
     "@types/styled-components": "5.1.26",
-    "@types/yargs": "17.0.24",
+    "@types/yargs": "17.0.31",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.53.0",
