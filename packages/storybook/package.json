@@ -10,6 +10,7 @@
     "clean": "rm -rf storybook-static",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
+    "lint:tsc": "tsc --noEmit",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {

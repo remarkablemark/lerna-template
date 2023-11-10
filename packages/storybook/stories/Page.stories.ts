@@ -15,7 +15,7 @@ export const LoggedOut = {};
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 export const LoggedIn = {
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLCanvasElement }) => {
     const canvas = within(canvasElement);
     const loginButton = await canvas.getByRole('button', {
       name: /Log in/i,

@@ -1,14 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import { Button } from './Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+import { Button } from './Button';
+
+export const Header = ({ user, onLogin, onLogout, onCreateAccount }: Props) => (
   <header>
     <div className="storybook-header">
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -37,7 +40,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button
+              primary
+              size="small"
+              onClick={onCreateAccount}
+              label="Sign up"
+            />
           </>
         )}
       </div>
@@ -45,14 +53,14 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   </header>
 );
 
-Header.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }),
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired,
-};
+export interface Props {
+  user?: {
+    name: string;
+  };
+  onLogin: () => void;
+  onLogout: () => void;
+  onCreateAccount: () => void;
+}
 
 Header.defaultProps = {
   user: null,

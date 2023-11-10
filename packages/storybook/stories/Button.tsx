@@ -1,16 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import './button.css';
+
+import type { CSSProperties } from 'react';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({
+  primary,
+  backgroundColor,
+  size,
+  label,
+  ...props
+}: Props) => {
+  const mode = primary
+    ? 'storybook-button--primary'
+    : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={['storybook-button', `storybook-button--${size}`, mode].join(
+        ' '
+      )}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
@@ -19,28 +29,28 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   );
 };
 
-Button.propTypes = {
+export interface Props {
   /**
    * Is this the principal call to action on the page?
    */
-  primary: PropTypes.bool,
+  primary?: boolean;
   /**
    * What background color to use
    */
-  backgroundColor: PropTypes.string,
+  backgroundColor?: CSSProperties['backgroundColor'];
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
-  label: PropTypes.string.isRequired,
+  label: string;
   /**
    * Optional click handler
    */
-  onClick: PropTypes.func,
-};
+  onClick?: () => void;
+}
 
 Button.defaultProps = {
   backgroundColor: null,
