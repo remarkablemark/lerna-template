@@ -12,7 +12,7 @@
     "test": "lerna run test -- --colors"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.5",
+    "@commitlint/cli": "18.4.1",
     "@commitlint/config-conventional": "18.1.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.1.0",
