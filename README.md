@@ -8,8 +8,8 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/):
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm):
+- [Node.js](https://nodejs.org/)
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ## Install
 
