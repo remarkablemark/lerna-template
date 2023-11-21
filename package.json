@@ -18,7 +18,7 @@
     "@testing-library/react": "14.1.2",
     "@types/jest": "29.5.8",
     "@types/jest-axe": "3.5.8",
-    "@types/styled-components": "5.1.30",
+    "@types/styled-components": "5.1.31",
     "@types/yargs": "17.0.31",
     "@typescript-eslint/eslint-plugin": "6.11.0",
     "@typescript-eslint/parser": "6.11.0",
