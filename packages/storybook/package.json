@@ -24,7 +24,7 @@
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.5.3",
     "@storybook/react": "^7.5.3",
-    "@storybook/react-vite": "^7.5.3",
+    "@storybook/react-vite": "^8.0.0",
     "@storybook/testing-library": "^0.2.2",
     "eslint-plugin-storybook": "^0.8.0",
     "prop-types": "^15.8.1",
