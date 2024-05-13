@@ -15,7 +15,7 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@testing-library/jest-dom": "6.4.5",
-    "@testing-library/react": "15.0.5",
+    "@testing-library/react": "15.0.7",
     "@types/jest": "29.5.12",
     "@types/jest-axe": "3.5.9",
     "@types/styled-components": "5.1.34",
