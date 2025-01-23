@@ -16,7 +16,7 @@
     "@commitlint/config-conventional": "19.6.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.2.0",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.14",
     "@types/jest-axe": "3.5.9",
     "@types/styled-components": "5.1.34",
     "@types/yargs": "17.0.33",
